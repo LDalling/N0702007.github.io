@@ -4,60 +4,76 @@
 
 <html ng-app style="height: 100%; width: 100%;">
   <head>
+      <script type="text/javascript" src="script.js"></script>
   </head>
   <body style="font:1em 'Helvetica'; margin:0; padding:0;background-color:grey;height:100%;width:100% ">
     <div class="background">
 
       <div style="position:absolute;width:100%;height:200px;background-color:transparent;border-radius:25px;z-index:0;margin:auto;margin-top: 50px;animation-name: fadein;animation-duration:1s;text-align:center ">
-        <div style="width:128px;height:128px;display:inline-block;border-radius:50%;margin:auto;align:center;background-image:url(profsmall.jpg); background-size: cover; background-position: center;"></div>
+        <div class="avatar"></div>
 
-        <div style="position:relative;display:inline-block;width:220px;height:128px;bottom:18px;background-color:transparent;">
-          <img src="user.png" style="display:inline-block;width:16px;height:16px;z-index:0;align:center;position:relative;bottom:18px">
-          <h1 style="bottom:16px;">
-              Liam Dalling
-          </h1>
-        <a href="https://twitter.com/tdhooligan">
-          <img src="twicon.png" style="position:relative;width:32px;height:32px;z-index:0;bottom:25px">
-        </a>
+          <div style="position:relative;display:inline-block;width:220px;height:128px;bottom:18px;background-color:transparent;">
+            <img src="user.png" style="display:inline-block;width:16px;height:16px;z-index:0;align:center;position:relative;bottom:18px">
+              <h1 style="bottom:16px;">
+                Liam Dalling
+              </h1>
+              <a href="https://twitter.com/tdhooligan">
+                <img src="twicon.png" style="position:relative;width:32px;height:32px;z-index:0;bottom:25px">
+              </a>
+          </div>
+
+          <div style="width:1000px;height:600px;background-color:white;z-index:0;border-radius:25px;margin:auto;margin-top:5px">
+            <div style="position:relative;width:95%;top:45px;height:4px;background-color:grey;z-index:1;margin:auto"></div>
+            <div style="position:relative;width:95%;top:45px;height:4px;background-color:darkgrey;z-index:1;margin:auto"></div>
+
+
+
+
+            <div class="navtab" style="left:25px;width:20%; top:5px; height:40px">
+              <img src="smile.png" style="display:inline-block;width:16px;height:16px;z-index:0;position:relative;top:2px">
+              <h1 style="font-size:100%">
+                About me
+              </h1>
+            </div>
+
+            <div class="navtab" style="left:25px;width:20%; top:5px; height:40px">
+              <img src="wand.png" style="display:inline-block;width:16px;height:16px;z-index:0;position:relative;top:2px">
+              <h1 style="font-size:100%">
+              PyDungeon
+              </h1>
+            </div>
+
+
+            <div class="navtab"style="left:25px;width:20%; top:5px; height:40px;">
+              <img src="brick.png" style="display:inline-block;width:16px;height:16px;z-index:0;position:relative;top:2px">
+              <h1 style="font-size:100%">
+                Other Projects
+              </h1>
+            </div>
+            <div id="navcontainer" class="navcontent" style="width:95%;left:2.5%;top:45px;">
+            <div id="aboutdiv" class="navcontent" style="position:absolute" >
+
+            </div>
+            <div id="pydiv"  class="navcontent" style="position:absolute">
+
+            </div>
+            <div id="otherdiv" class="navcontent" style="position:absolute" >
+
+             </div>
+           </div>
+
+
+          </div>
+
+
+            <div style="width:250px;height:40px;background-color:white;z-index:0;border-radius:25px;margin:auto;margin-top:5px">
+              <img src="heart.png" style="position:relative;width:16;height:16;z-index:0;display:inline-block;padding-top:10px">
+              <a href="http://www.famfamfam.com/lab/icons/silk/" style="display:inline-block;">
+                Icons by famfamfam
+              </a>
+            </div>
+        </div>
+
       </div>
-        <div style="width:1000px;height:600px;background-color:white;z-index:0;border-radius:25px;margin:auto;margin-top:5px">
-          <div style="position:relative;width:95%;top:45px;height:4px;background-color:grey;z-index:1;margin:auto;margin-top:2px">
-          </div>
-          <div class="inlinediv" style="left:15px;width:20%; top:5px; height:40px">
-          <img src="smile.png" style="display:inline-block;width:16px;height:16px;z-index:0;position:relative;top:2px">
-          <h1 style="font-size:100%">
-           About me
-          </h1>
-          </div>
-
-          <div class="inlinediv" style="left:15px;width:20%; top:5px; height:40px">
-          <img src="wand.png" style="display:inline-block;width:16px;height:16px;z-index:0;position:relative;top:2px">
-          <h1 style="font-size:100%">
-          PyDungeon
-          </h1>
-          </div>
-
-
-          <div class="inlinediv"style="left:15px;width:20%; top:5px; height:40px;">
-          <img src="brick.png" style="display:inline-block;width:16px;height:16px;z-index:0;position:relative;top:2px">
-          <h1 style="font-size:100%">
-            Other Projects
-          </h1>
-          </div>
-
-
-         </div>
-           <div style="width:250px;height:40px;background-color:white;z-index:0;border-radius:25px;margin:auto;margin-top:5px">
-          <img src="heart.png" style="position:relative;width:16;height:16;z-index:0;display:inline-block;padding-top:10px">
-         <a href="http://www.famfamfam.com/lab/icons/silk/" style="display:inline-block;">
-          Icons by famfamfam
-        </a>
-      </div>
-      </div>
-
-    </div>
-
-
-
   </body>
 </html>
