@@ -4,9 +4,15 @@
 
 <html ng-app style="height: 100%; width: 100%;">
   <head>
-      <script type="text/javascript" src="/script.js"></script>
   </head>
   <body style="font:1em 'Helvetica'; margin:0; padding:0;background-color:grey;height:100%;width:100% ">
+
+    <!-- Modal from w3Schools.com -->
+    <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+    </div>
     <div class="background">
 
       <div style="position:absolute;width:100%;height:200px;background-color:transparent;border-radius:25px;z-index:0;margin:auto;margin-top: 50px;animation-name: fadein;animation-duration:1s;text-align:center ">
@@ -14,7 +20,7 @@
 
           <div style="position:relative;display:inline-block;width:220px;height:128px;bottom:18px;background-color:transparent;">
             <img src="user.png" style="display:inline-block;width:16px;height:16px;z-index:0;align:center;position:relative;bottom:18px">
-              <h1 style="bottom:16px;">
+              <h1 style="bottom:16px;font:helvetica">
                 Liam Dalling
               </h1>
               <a href="https://twitter.com/tdhooligan">
@@ -22,51 +28,105 @@
               </a>
           </div>
 
-          <div style="width:1000px;height:600px;background-color:white;z-index:0;border-radius:25px;margin:auto;margin-top:5px">
-            <div style="position:relative;width:95%;top:45px;height:4px;background-color:grey;z-index:1;margin:auto"></div>
-            <div style="position:relative;width:95%;top:45px;height:4px;background-color:darkgrey;z-index:1;margin:auto"></div>
+          <div style="width:1000px;height:582px;background-color:rgb(140,140,140);z-index:0;border-radius:25px;margin:auto;margin-top:5px">
+            <div style="position:relative;width:980px;top:48px;height:4px;background-color:rgb(153,153,153);z-index:1;margin:auto"></div>
 
 
 
 
-            <div class="navtab" style="left:25px;width:20%; top:5px; height:40px">
-              <img src="smile.png" style="display:inline-block;width:16px;height:16px;z-index:0;position:relative;top:2px">
-              <h1 style="font-size:100%">
-                About me
-              </h1>
-            </div>
+            <div id="pytab" class="navtab" onclick="openTab('py')" style="background-color:rgb(102,102,172);left:10px;width:20%; height:40px">
 
-            <div class="navtab" style="left:25px;width:20%; top:5px; height:40px">
-              <img src="wand.png" style="display:inline-block;width:16px;height:16px;z-index:0;position:relative;top:2px">
+              <img src="wand.png" class = "navtabimage" >
               <h1 style="font-size:100%">
               PyDungeon
               </h1>
             </div>
 
-
-            <div class="navtab"style="left:25px;width:20%; top:5px; height:40px;">
-              <img src="brick.png" style="display:inline-block;width:16px;height:16px;z-index:0;position:relative;top:2px">
+            <div id="hgtab" class="navtab" onclick="openTab('hg')" style="left:10px;width:20%; height:40px">
+              <img src="cake.png"class = "navtabimage" >
               <h1 style="font-size:100%">
-                Other Projects
+                Hunger Bot
               </h1>
             </div>
-            <div id="navcontainer" class="navcontent" style="width:95%;left:2.5%;top:45px;">
-            <div id="aboutdiv" class="navcontent" style="position:absolute" >
 
+
+            <div id="shootertab" class="navtab" onclick="openTab('shooter')" style="left:10px;width:20%; height:40px;">
+              <img class = "navtabimage" src="brick.png">
+              <h1 style="font-size:100%">
+                Shooter Prototype
+              </h1>
             </div>
-            <div id="pydiv"  class="navcontent" style="position:absolute">
 
+
+
+
+
+
+            <div id="navcontainer" class="navcontentholder">
+
+            <div id="pydiv"  class="navcontent"  style="display:block">
+              <b class="navcontentheader">Project Title: PyDungeon</b>
+              <b class="navcontentheader" style="top:40px"> Language: Python <span style="font-weight:100">(with Numpy and Pygame)</span> </b>
+              <div class="navcontenttext" style="top:70px" >PyDungeon is a small prototype dungeon crawler based on NetHack, created as my freeform project for my first programming unit at NTU.</div>
+              <b class="navcontentheader" style="top:140px"> Features:  </b>
+              <div class="navcontenttext" style="top:160px" >Random level generation with A* pathfinding for room connection<br><br>
+              Animated graphics system, allowing moves to have special animations and leave permanent marks on the level’s tiles<br><br>
+              Modular abilities system, making abilities independent from weapons, allowing generation of weapons that grant the usage of a spell. <br><br>
+              A framework that allows easy addition of items and monsters.<br><br>
+
+              </div>
+
+              <div class = "floatingbackground" style="position:absolute;width:500px;height:500px;float:right;top:10px;right:15px;">
+                <img alt="Player casting a fireball in PyDungeon"  class="modalImg" src="pydungeon.png" style="position:relative;top:5px;width:490px;height:490px" >
+              </div>
             </div>
-            <div id="otherdiv" class="navcontent" style="position:absolute" >
+            <div id="hgdiv" class="navcontent">
+              <b class="navcontentheader">Project Title: Hunger Games Bot</b>
+              <b class="navcontentheader" style="top:40px"> Language: Javascript/Node</b>
+              <div class="navcontenttext" style="top:70px" >Originally created as a joke over the last week of the 2017 summer holiday, this bot simulates the outcome of a hunger-games style survival situation.</div>
+              <b class="navcontentheader" style="top:140px"> Features:  </b>
+              <div class="navcontenttext" style="top:160px" >Support for use on multiple servers simultaneously<br><br>
+              Multiple play modes, including explicitly command driven, hourly updates or 'party mode' which posts every event one after the other.<br><br>
+              Simple addition of new content, from new contenders through to new murder methods. <br><br>
+              Betting system, allowing players to bet on specific districts.<br><br>
 
+              </div>
+
+              <div class = "floatingbackground" style="position:absolute;width:500px;height:212px;float:right;top:10px;right:15px;">
+                <img alt="A series of unfortunate events from an early build. (Note: 'Smash Mouth' was created as a single entity by a user)"  class="modalImg"  src="botexample.png" style="position:relative;top:5px;width:490px;" >
+              </div>
+              <div class = "floatingbackground" style="position:absolute;width:500px;height:174px;float:right;top:232px;right:15px;">
+                <img  alt="A newer screenshot from a more recent version."  class="modalImg" src="botexamplenew.png" style="position:relative;top:5px;width:490px;" >
+              </div>
              </div>
+
+
+
+
+            <div id="shooterdiv" class="navcontent">
+              <b class="navcontentheader">Project Title: Shooter Prototype</b>
+              <b class="navcontentheader" style="top:40px"> Language: C++ <span style="font-weight:100">(with SDL)</span> </b>
+              <div class="navcontenttext" style="top:70px" >Created over my third term of my Computer Science Programming Module, this shooter was created to prove my knowledge of OOP.</div>
+              <b class="navcontentheader" style="top:140px"> Features:  </b>
+              <div class="navcontenttext" style="top:160px" >Custom tracing system for hit detection<br><br>
+              Unlocked, panning camera.<br><br>
+              Remappable controls support. <br><br>
+              Infinite zombie spawns.<br><br>
+
+              </div>
+
+              <div class = "floatingbackground" style="position:absolute;width:500px;height:285px;float:right;top:10px;right:15px;">
+                <img alt="A player firing upon other dots."  class="modalImg" src="cppshooter.png" style="position:relative;top:5px;width:490px;" >
+              </div>
+             </div>
+
            </div>
 
 
           </div>
 
 
-            <div style="width:250px;height:40px;background-color:white;z-index:0;border-radius:25px;margin:auto;margin-top:5px">
+            <div style="width:250px;height:40px;background-color:rgba(255,255,255,0.4);z-index:0;border-radius:25px;margin:auto;margin-top:5px">
               <img src="heart.png" style="position:relative;width:16;height:16;z-index:0;display:inline-block;padding-top:10px">
               <a href="http://www.famfamfam.com/lab/icons/silk/" style="display:inline-block;">
                 Icons by famfamfam
@@ -75,5 +135,6 @@
         </div>
 
       </div>
+          <script type="text/javascript" src="/script.js"></script>
   </body>
 </html>
